@@ -1,32 +1,35 @@
 // Main JavaScript for Le Mach Hotel Website
 
 document.addEventListener('DOMContentLoaded', function() {
-    
     // Navbar scroll effect
     const navbar = document.querySelector('.navbar');
-    const navbarToggler = document.querySelector('.navbar-toggler');
-    const navbarCollapse = document.querySelector('.navbar-collapse');
+    let lastScrollTop = 0;
     
     window.addEventListener('scroll', function() {
-        if (window.scrollY > 50) {
-            navbar.style.background = 'rgba(255, 255, 255, 0.98)';
-            navbar.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.1)';
+        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        
+        if (scrollTop > 100) {
+            navbar.classList.add('scrolled');
         } else {
-            navbar.style.background = 'rgba(255, 255, 255, 0.95)';
-            navbar.style.boxShadow = '0 4px 6px rgba(0, 0, 0, 0.1)';
+            navbar.classList.remove('scrolled');
         }
+        
+        lastScrollTop = scrollTop;
     });
-    
-    // Close mobile menu when clicking on a link
+
+    // Close mobile menu when clicking on links
     const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
+    const navbarCollapse = document.querySelector('.navbar-collapse');
+    
     navLinks.forEach(link => {
         link.addEventListener('click', () => {
             if (navbarCollapse.classList.contains('show')) {
-                navbarToggler.click();
+                const bsCollapse = new bootstrap.Collapse(navbarCollapse);
+                bsCollapse.hide();
             }
         });
     });
-    
+
     // Smooth scrolling for anchor links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
@@ -40,13 +43,13 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     });
-    
+
     // Animate elements on scroll
     const observerOptions = {
         threshold: 0.1,
         rootMargin: '0px 0px -50px 0px'
     };
-    
+
     const observer = new IntersectionObserver(function(entries) {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
@@ -55,8 +58,7 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     }, observerOptions);
-    
-    // Observe elements for animation
+
     const animateElements = document.querySelectorAll('.feature-card, .room-card, .offer-card, .about-content, .about-image');
     animateElements.forEach(el => {
         el.style.opacity = '0';
@@ -64,7 +66,7 @@ document.addEventListener('DOMContentLoaded', function() {
         el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
         observer.observe(el);
     });
-    
+
     // Hero section parallax effect
     const heroSection = document.querySelector('.hero-section');
     if (heroSection) {
@@ -74,142 +76,43 @@ document.addEventListener('DOMContentLoaded', function() {
             heroSection.style.transform = `translateY(${rate}px)`;
         });
     }
-    
-    // Booking form validation (if exists)
-    const bookingForm = document.querySelector('#booking-form');
-    if (bookingForm) {
-        bookingForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            // Basic form validation
-            const requiredFields = bookingForm.querySelectorAll('[required]');
-            let isValid = true;
-            
-            requiredFields.forEach(field => {
-                if (!field.value.trim()) {
-                    field.classList.add('is-invalid');
-                    isValid = false;
-                } else {
-                    field.classList.remove('is-invalid');
-                }
-            });
-            
-            if (isValid) {
-                // Show success message
-                showNotification('Booking request submitted successfully!', 'success');
-                bookingForm.reset();
-            } else {
-                showNotification('Please fill in all required fields.', 'error');
-            }
-        });
-    }
-    
-    // Contact form validation (if exists)
-    const contactForm = document.querySelector('#contact-form');
-    if (contactForm) {
-        contactForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            // Basic form validation
-            const requiredFields = contactForm.querySelectorAll('[required]');
-            let isValid = true;
-            
-            requiredFields.forEach(field => {
-                if (!field.value.trim()) {
-                    field.classList.add('is-invalid');
-                    isValid = false;
-                } else {
-                    field.classList.remove('is-invalid');
-                }
-            });
-            
-            // Email validation
-            const emailField = contactForm.querySelector('input[type="email"]');
-            if (emailField && emailField.value) {
-                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-                if (!emailRegex.test(emailField.value)) {
-                    emailField.classList.add('is-invalid');
-                    isValid = false;
-                }
-            }
-            
-            if (isValid) {
-                showNotification('Message sent successfully!', 'success');
-                contactForm.reset();
-            } else {
-                showNotification('Please check your input and try again.', 'error');
-            }
-        });
-    }
-    
+
     // Notification system
-    function showNotification(message, type) {
+    function showNotification(message, type = 'success') {
         const notification = document.createElement('div');
-        notification.className = `notification notification-${type}`;
-        notification.innerHTML = `
-            <div class="notification-content">
-                <span class="notification-message">${message}</span>
-                <button class="notification-close">&times;</button>
-            </div>
-        `;
-        
-        // Add styles
+        notification.className = `alert alert-${type} notification`;
         notification.style.cssText = `
             position: fixed;
-            top: 20px;
+            top: 100px;
             right: 20px;
-            background: ${type === 'success' ? '#28a745' : '#dc3545'};
-            color: white;
-            padding: 15px 20px;
-            border-radius: 5px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-            z-index: 1000;
-            transform: translateX(100%);
-            transition: transform 0.3s ease;
+            z-index: 9999;
+            min-width: 300px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            animation: slideInRight 0.3s ease;
+        `;
+        notification.innerHTML = `
+            <div class="d-flex align-items-center">
+                <i class="fas fa-${type === 'success' ? 'check-circle' : 'exclamation-circle'} me-2"></i>
+                <span>${message}</span>
+                <button type="button" class="btn-close ms-auto" onclick="this.parentElement.parentElement.remove()"></button>
+            </div>
         `;
         
         document.body.appendChild(notification);
         
-        // Animate in
         setTimeout(() => {
-            notification.style.transform = 'translateX(0)';
-        }, 100);
-        
-        // Close button functionality
-        const closeBtn = notification.querySelector('.notification-close');
-        closeBtn.addEventListener('click', () => {
-            notification.style.transform = 'translateX(100%)';
-            setTimeout(() => {
-                document.body.removeChild(notification);
-            }, 300);
-        });
-        
-        // Auto remove after 5 seconds
-        setTimeout(() => {
-            if (document.body.contains(notification)) {
-                notification.style.transform = 'translateX(100%)';
-                setTimeout(() => {
-                    if (document.body.contains(notification)) {
-                        document.body.removeChild(notification);
-                    }
-                }, 300);
-            }
-        }, 5000);
+            notification.style.animation = 'slideOutRight 0.3s ease';
+            setTimeout(() => notification.remove(), 300);
+        }, 3000);
     }
-    
-    // Room gallery lightbox (if exists)
-    const roomImages = document.querySelectorAll('.room-gallery img');
+
+    // Room gallery lightbox
+    const roomImages = document.querySelectorAll('.room-card img');
     roomImages.forEach(img => {
         img.addEventListener('click', function() {
             const lightbox = document.createElement('div');
             lightbox.className = 'lightbox';
-            lightbox.innerHTML = `
-                <div class="lightbox-content">
-                    <img src="${this.src}" alt="${this.alt}">
-                    <button class="lightbox-close">&times;</button>
-                </div>
-            `;
-            
             lightbox.style.cssText = `
                 position: fixed;
                 top: 0;
@@ -220,119 +123,83 @@ document.addEventListener('DOMContentLoaded', function() {
                 display: flex;
                 align-items: center;
                 justify-content: center;
-                z-index: 1000;
-                opacity: 0;
-                transition: opacity 0.3s ease;
-            `;
-            
-            const lightboxContent = lightbox.querySelector('.lightbox-content');
-            lightboxContent.style.cssText = `
-                position: relative;
-                max-width: 90%;
-                max-height: 90%;
-            `;
-            
-            const lightboxImg = lightbox.querySelector('img');
-            lightboxImg.style.cssText = `
-                width: 100%;
-                height: auto;
-                border-radius: 10px;
-            `;
-            
-            const closeBtn = lightbox.querySelector('.lightbox-close');
-            closeBtn.style.cssText = `
-                position: absolute;
-                top: -40px;
-                right: 0;
-                background: none;
-                border: none;
-                color: white;
-                font-size: 2rem;
+                z-index: 9999;
                 cursor: pointer;
             `;
             
+            const image = document.createElement('img');
+            image.src = this.src;
+            image.style.cssText = `
+                max-width: 90%;
+                max-height: 90%;
+                object-fit: contain;
+                border-radius: 10px;
+            `;
+            
+            lightbox.appendChild(image);
             document.body.appendChild(lightbox);
             
-            setTimeout(() => {
-                lightbox.style.opacity = '1';
-            }, 10);
-            
-            // Close functionality
-            const closeLightbox = () => {
-                lightbox.style.opacity = '0';
-                setTimeout(() => {
-                    if (document.body.contains(lightbox)) {
-                        document.body.removeChild(lightbox);
-                    }
-                }, 300);
-            };
-            
-            closeBtn.addEventListener('click', closeLightbox);
-            lightbox.addEventListener('click', function(e) {
-                if (e.target === lightbox) {
-                    closeLightbox();
-                }
-            });
+            lightbox.addEventListener('click', () => lightbox.remove());
         });
     });
-    
-    // Counter animation for statistics (if exists)
-    const counters = document.querySelectorAll('.counter');
+
+    // Counter animation for statistics
+    const counters = document.querySelectorAll('.stat-number');
     const counterObserver = new IntersectionObserver(function(entries) {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                const counter = entry.target;
-                const target = parseInt(counter.getAttribute('data-target'));
-                const duration = 2000; // 2 seconds
-                const increment = target / (duration / 16); // 60fps
+                const target = entry.target;
+                const final = parseInt(target.getAttribute('data-target'));
+                const increment = final / 100;
                 let current = 0;
                 
                 const updateCounter = () => {
-                    current += increment;
-                    if (current < target) {
-                        counter.textContent = Math.floor(current);
-                        requestAnimationFrame(updateCounter);
+                    if (current < final) {
+                        current += increment;
+                        target.textContent = Math.ceil(current);
+                        setTimeout(updateCounter, 20);
                     } else {
-                        counter.textContent = target;
+                        target.textContent = final;
                     }
                 };
                 
                 updateCounter();
-                counterObserver.unobserve(counter);
+                counterObserver.unobserve(target);
             }
         });
     }, { threshold: 0.5 });
-    
+
     counters.forEach(counter => {
         counterObserver.observe(counter);
     });
-    
+
     // Back to top button
     const backToTopBtn = document.createElement('button');
     backToTopBtn.innerHTML = '<i class="fas fa-chevron-up"></i>';
-    backToTopBtn.className = 'back-to-top';
+    backToTopBtn.className = 'btn btn-primary back-to-top';
     backToTopBtn.style.cssText = `
         position: fixed;
         bottom: 30px;
         right: 30px;
         width: 50px;
         height: 50px;
+        border-radius: 50%;
+        border: none;
         background: var(--primary-color);
         color: white;
-        border: none;
-        border-radius: 50%;
+        font-size: 1.2rem;
         cursor: pointer;
         opacity: 0;
         visibility: hidden;
         transition: all 0.3s ease;
         z-index: 1000;
-        box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        box-shadow: 0 4px 15px rgba(210, 105, 30, 0.3);
     `;
     
     document.body.appendChild(backToTopBtn);
     
     window.addEventListener('scroll', function() {
-        if (window.scrollY > 300) {
+        if (window.pageYOffset > 300) {
             backToTopBtn.style.opacity = '1';
             backToTopBtn.style.visibility = 'visible';
         } else {
@@ -347,36 +214,108 @@ document.addEventListener('DOMContentLoaded', function() {
             behavior: 'smooth'
         });
     });
-    
-    // Hover effects for back to top button
-    backToTopBtn.addEventListener('mouseenter', function() {
-        this.style.transform = 'translateY(-3px)';
-        this.style.boxShadow = '0 6px 20px rgba(0,0,0,0.2)';
-    });
-    
-    backToTopBtn.addEventListener('mouseleave', function() {
-        this.style.transform = 'translateY(0)';
-        this.style.boxShadow = '0 4px 12px rgba(0,0,0,0.15)';
-    });
-    
-    // Initialize tooltips if Bootstrap is available
-    if (typeof bootstrap !== 'undefined') {
-        const tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
-        tooltipTriggerList.map(function (tooltipTriggerEl) {
-            return new bootstrap.Tooltip(tooltipTriggerEl);
+
+    // Form validation for booking and contact forms
+    const forms = document.querySelectorAll('form');
+    forms.forEach(form => {
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Basic validation
+            const requiredFields = form.querySelectorAll('[required]');
+            let isValid = true;
+            
+            requiredFields.forEach(field => {
+                if (!field.value.trim()) {
+                    field.classList.add('is-invalid');
+                    isValid = false;
+                } else {
+                    field.classList.remove('is-invalid');
+                }
+            });
+            
+            if (isValid) {
+                showNotification('Form submitted successfully! We will contact you soon.', 'success');
+                form.reset();
+            } else {
+                showNotification('Please fill in all required fields.', 'danger');
+            }
         });
-    }
-    
-    // Preloader (if exists)
-    const preloader = document.querySelector('.preloader');
-    if (preloader) {
-        window.addEventListener('load', function() {
-            preloader.style.opacity = '0';
-            setTimeout(() => {
-                preloader.style.display = 'none';
-            }, 300);
+    });
+
+    // Add loading animation to buttons
+    const buttons = document.querySelectorAll('.btn');
+    buttons.forEach(button => {
+        button.addEventListener('click', function() {
+            if (!this.classList.contains('btn-loading')) {
+                const originalText = this.innerHTML;
+                this.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Loading...';
+                this.classList.add('btn-loading');
+                
+                setTimeout(() => {
+                    this.innerHTML = originalText;
+                    this.classList.remove('btn-loading');
+                }, 2000);
+            }
         });
-    }
-    
-    console.log('Le Mach Hotel Website - JavaScript loaded successfully!');
+    });
+
+    // Enhanced hover effects for cards
+    const cards = document.querySelectorAll('.feature-card, .room-card, .offer-card');
+    cards.forEach(card => {
+        card.addEventListener('mouseenter', function() {
+            this.style.transform = 'translateY(-10px) scale(1.02)';
+        });
+        
+        card.addEventListener('mouseleave', function() {
+            this.style.transform = 'translateY(0) scale(1)';
+        });
+    });
+
+    // Add CSS animations
+    const style = document.createElement('style');
+    style.textContent = `
+        @keyframes slideInRight {
+            from {
+                transform: translateX(100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+        
+        @keyframes slideOutRight {
+            from {
+                transform: translateX(0);
+                opacity: 1;
+            }
+            to {
+                transform: translateX(100%);
+                opacity: 0;
+            }
+        }
+        
+        .btn-loading {
+            pointer-events: none;
+        }
+        
+        .lightbox img {
+            animation: zoomIn 0.3s ease;
+        }
+        
+        @keyframes zoomIn {
+            from {
+                transform: scale(0.5);
+                opacity: 0;
+            }
+            to {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+    `;
+    document.head.appendChild(style);
 });
+
