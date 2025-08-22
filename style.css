@@ -64,11 +64,23 @@ h1, h2, h3, h4, h5, h6 {
     position: relative !important;
     box-shadow: var(--shadow-strong) !important;
     transition: all 0.3s ease !important;
+    overflow: hidden !important;
 }
 
 .logo-graphic:hover {
     transform: rotate(5deg) !important;
     box-shadow: 0 15px 35px rgba(210, 105, 30, 0.3) !important;
+}
+
+.logo-image {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: contain !important;
+    transition: all 0.3s ease !important;
+}
+
+.logo-graphic:hover .logo-image {
+    transform: scale(1.1) !important;
 }
 
 .sun-icon {
