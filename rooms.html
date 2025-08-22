@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rooms & Accommodations - Le Mach Hotel</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <div class="logo">
+                    <div class="logo-graphic">
+                        <div class="sun-icon"></div>
+                    </div>
+                    <div class="logo-text">
+                        <h1>LE MACH</h1>
+                        <p>IN LOVE WITH THE SUN</p>
+                    </div>
+                </div>
+            </a>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="meetings-events.html">Meetings & Events</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="rooms.html">Rooms</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="deals.html">Deals</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+                            Culinary
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="menu.html">Menu</a></li>
+                            <li><a class="dropdown-item" href="bar-restaurant.html">Bar & Restaurant</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="btn btn-primary booking-btn" href="booking.html">Book Now</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header" style="background: linear-gradient(135deg, var(--primary-color) 0%, var(--accent-color) 100%); padding: 120px 0 80px; color: white; text-align: center;">
+        <div class="container">
+            <h1>Our Accommodations</h1>
+            <p>Experience comfort and luxury in our carefully designed rooms and suites</p>
+        </div>
+    </section>
+
+    <!-- Room Categories -->
+    <section class="room-categories py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-md-6 mb-5">
+                    <div class="room-card">
+                        <div class="room-gallery">
+                            <img src="images/standard-room.jpg" alt="Standard Room" class="img-fluid">
+                            <div class="room-price">
+                                <span>From KES 8,500</span>
+                                <small>per night</small>
+                            </div>
+                        </div>
+                        <div class="room-content">
+                            <h3>Standard Room</h3>
+                            <p>Perfect for solo travelers or couples, our standard rooms offer comfort and convenience with modern amenities.</p>
+                            
+                            <div class="room-features">
+                                <div class="feature-item">
+                                    <i class="fas fa-bed"></i>
+                                    <span>1 King Bed or 2 Twin Beds</span>
+                                </div>
+                                <div class="feature-item">
+                                    <i class="fas fa-users"></i>
+                                    <span>2 Guests</span>
+                                </div>
+                                <div class="feature-item">
+                                    <i class="fas fa-ruler-combined"></i>
+                                    <span>35 sqm</span>
+                                </div>
+                                <div class="feature-item">
+                                    <i class="fas fa-mountain"></i>
+                                    <span>Garden View</span>
+                                </div>
+                            </div>
+                            
+                            <div class="room-amenities">
+                                <h5>Amenities</h5>
+                                <ul>
+                                    <li><i class="fas fa-wifi"></i> Free WiFi</li>
+                                    <li><i class="fas fa-snowflake"></i> Air Conditioning</li>
+                                    <li><i class="fas fa-tv"></i> Smart TV</li>
+                                    <li><i class="fas fa-coffee"></i> Coffee Maker</li>
+                                    <li><i class="fas fa-shower"></i> Private Bathroom</li>
+                                    <li><i class="fas fa-umbrella-beach"></i> Balcony</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="room-actions">
+                                <a href="booking.html" class="btn btn-primary">Book Now</a>
+                                <a href="#" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#standardRoomModal">View Details</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6 mb-5">
+                    <div class="room-card">
+                        <div class="room-gallery">
+                            <img src="images/deluxe-room.jpg" alt="Deluxe Room" class="img-fluid">
+                            <div class="room-price">
+                                <span>From KES 12,500</span>
+                                <small>per night</small>
+                            </div>
+                        </div>
+                        <div class="room-content">
+                            <h3>Deluxe Room</h3>
+                            <p>Spacious and elegant, our deluxe rooms offer premium amenities and stunning views for an enhanced stay.</p>
+                            
+                            <div class="room-features">
+                                <div class="feature-item">
+                                    <i class="fas fa-bed"></i>
+                                    <span>1 King Bed</span>
+                                </div>
+                                <div class="feature-item">
+                                    <i class="fas fa-users"></i>
+                                    <span>2 Guests</span>
+                                </div>
+                                <div class="feature-item">
+                                    <i class="fas fa-ruler-combined"></i>
+                                    <span>45 sqm</span>
+                                </div>
+                                <div class="feature-item">
+                                    <i class="fas fa-mountain"></i>
+                                    <span>Ocean View</span>
+                                </div>
+                            </div>
+                            
+                            <div class="room-amenities">
+                                <h5>Amenities</h5>
+                                <ul>
+                                    <li><i class="fas fa-wifi"></i> Free WiFi</li>
+                                    <li><i class="fas fa-snowflake"></i> Air Conditioning</li>
+                                    <li><i class="fas fa-tv"></i> Smart TV</li>
+                                    <li><i class="fas fa-coffee"></i> Coffee Maker</li>
+                                    <li><i class="fas fa-shower"></i> Private Bathroom</li>
+                                    <li><i class="fas fa-umbrella-beach"></i> Private Balcony</li>
+                                    <li><i class="fas fa-bath"></i> Bathtub</li>
+                                    <li><i class="fas fa-concierge-bell"></i> Room Service</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="room-actions">
+                                <a href="booking.html" class="btn btn-primary">Book Now</a>
+                                <a href="#" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#deluxeRoomModal">View Details</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6 mb-5">
+                    <div class="room-card">
+                        <div class="room-gallery">
+                            <img src="images/suite.jpg" alt="Executive Suite" class="img-fluid">
+                            <div class="room-price">
+                                <span>From KES 18,500</span>
+                                <small>per night</small>
+                            </div>
+                        </div>
+                        <div class="room-content">
+                            <h3>Executive Suite</h3>
+                            <p>Ultimate luxury with separate living areas, premium services, and exclusive amenities for discerning guests.</p>
+                            
+                            <div class="room-features">
+                                <div class="feature-item">
+                                    <i class="fas fa-bed"></i>
+                                    <span>1 King Bed</span>
+                                </div>
+                                <div class="feature-item">
+                                    <i class="fas fa-users"></i>
+                                    <span>4 Guests</span>
+                                </div>
+                                <div class="feature-item">
+                                    <i class="fas fa-ruler-combined"></i>
+                                    <span>75 sqm</span>
+                                </div>
+                                <div class="feature-item">
+                                    <i class="fas fa-mountain"></i>
+                                    <span>Panoramic View</span>
+                                </div>
+                            </div>
+                            
+                            <div class="room-amenities">
+                                <h5>Amenities</h5>
+                                <ul>
+                                    <li><i class="fas fa-wifi"></i> Free WiFi</li>
+                                    <li><i class="fas fa-snowflake"></i> Air Conditioning</li>
+                                    <li><i class="fas fa-tv"></i> Smart TV</li>
+                                    <li><i class="fas fa-coffee"></i> Coffee Maker</li>
+                                    <li><i class="fas fa-shower"></i> Private Bathroom</li>
+                                    <li><i class="fas fa-umbrella-beach"></i> Private Terrace</li>
+                                    <li><i class="fas fa-bath"></i> Jacuzzi</li>
+                                    <li><i class="fas fa-concierge-bell"></i> 24/7 Room Service</li>
+                                    <li><i class="fas fa-couch"></i> Living Room</li>
+                                    <li><i class="fas fa-utensils"></i> Mini Kitchen</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="room-actions">
+                                <a href="booking.html" class="btn btn-primary">Book Now</a>
+                                <a href="#" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#suiteModal">View Details</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Room Comparison -->
+    <section class="room-comparison py-5" style="background: var(--light-bg);">
+        <div class="container">
+            <div class="section-header text-center mb-5">
+                <h2>Room Comparison</h2>
+                <p>Compare our room types to find the perfect fit for your stay</p>
+            </div>
+            
+            <div class="table-responsive">
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th>Features</th>
+                            <th>Standard Room</th>
+                            <th>Deluxe Room</th>
+                            <th>Executive Suite</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Size</td>
+                            <td>35 sqm</td>
+                            <td>45 sqm</td>
+                            <td>75 sqm</td>
+                        </tr>
+                        <tr>
+                            <td>Max Guests</td>
+                            <td>2</td>
+                            <td>2</td>
+                            <td>4</td>
+                        </tr>
+                        <tr>
+                            <td>Bed Type</td>
+                            <td>King or Twin</td>
+                            <td>King</td>
+                            <td>King</td>
+                        </tr>
+                        <tr>
+                            <td>View</td>
+                            <td>Garden</td>
+                            <td>Ocean</td>
+                            <td>Panoramic</td>
+                        </tr>
+                        <tr>
+                            <td>Balcony</td>
+                            <td><i class="fas fa-check text-success"></i></td>
+                            <td><i class="fas fa-check text-success"></i></td>
+                            <td><i class="fas fa-check text-success"></i></td>
+                        </tr>
+                        <tr>
+                            <td>Bathtub</td>
+                            <td><i class="fas fa-times text-muted"></i></td>
+                            <td><i class="fas fa-check text-success"></i></td>
+                            <td><i class="fas fa-check text-success"></i></td>
+                        </tr>
+                        <tr>
+                            <td>Jacuzzi</td>
+                            <td><i class="fas fa-times text-muted"></i></td>
+                            <td><i class="fas fa-times text-muted"></i></td>
+                            <td><i class="fas fa-check text-success"></i></td>
+                        </tr>
+                        <tr>
+                            <td>Living Room</td>
+                            <td><i class="fas fa-times text-muted"></i></td>
+                            <td><i class="fas fa-times text-muted"></i></td>
+                            <td><i class="fas fa-check text-success"></i></td>
+                        </tr>
+                        <tr>
+                            <td>Price (per night)</td>
+                            <td>KES 8,500</td>
+                            <td>KES 12,500</td>
+                            <td>KES 18,500</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- Booking CTA -->
+    <section class="booking-cta py-5" style="background: linear-gradient(135deg, var(--secondary-color) 0%, var(--primary-color) 100%); color: white;">
+        <div class="container text-center">
+            <h2>Ready to Book Your Stay?</h2>
+            <p>Experience the perfect blend of comfort and luxury at Le Mach Hotel</p>
+            <div class="cta-buttons">
+                <a href="booking.html" class="btn btn-light btn-lg me-3">Book Now</a>
+                <a href="contact.html" class="btn btn-outline-light btn-lg">Contact Us</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="footer-logo">
+                        <div class="logo">
+                            <div class="logo-graphic">
+                                <div class="sun-icon"></div>
+                            </div>
+                            <div class="logo-text">
+                                <h3>LE MACH</h3>
+                                <p>IN LOVE WITH THE SUN</p>
+                            </div>
+                        </div>
+                    </div>
+                    <p>Experience luxury and comfort in the heart of Kilifi County. Your perfect getaway destination.</p>
+                </div>
+                <div class="col-lg-2 col-md-6 mb-4">
+                    <h5>Quick Links</h5>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="rooms.html">Rooms</a></li>
+                        <li><a href="meetings-events.html">Events</a></li>
+                        <li><a href="about.html">About</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-md-6 mb-4">
+                    <h5>Services</h5>
+                    <ul class="footer-links">
+                        <li><a href="bar-restaurant.html">Restaurant</a></li>
+                        <li><a href="menu.html">Menu</a></li>
+                        <li><a href="deals.html">Deals</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <h5>Contact Info</h5>
+                    <div class="contact-info">
+                        <p><i class="fas fa-map-marker-alt"></i> Kilifi County, Off B69</p>
+                        <p><i class="fas fa-phone"></i> +254 XXX XXX XXX</p>
+                        <p><i class="fas fa-envelope"></i> info@lemachhotel.com</p>
+                    </div>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col-md-6">
+                    <p>&copy; 2024 Le Mach Hotel & Accommodations. All rights reserved.</p>
+                </div>
+                <div class="col-md-6 text-end">
+                    <p>Designed with <i class="fas fa-heart"></i> for our guests</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Room Detail Modals -->
+    <!-- Standard Room Modal -->
+    <div class="modal fade" id="standardRoomModal" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Standard Room Details</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <img src="images/standard-room.jpg" alt="Standard Room" class="img-fluid rounded">
+                        </div>
+                        <div class="col-md-6">
+                            <h4>Room Features</h4>
+                            <ul>
+                                <li>35 square meters of comfortable space</li>
+                                <li>1 King Bed or 2 Twin Beds</li>
+                                <li>Garden view</li>
+                                <li>Private balcony</li>
+                                <li>Air conditioning</li>
+                                <li>Free WiFi</li>
+                                <li>Smart TV</li>
+                                <li>Coffee maker</li>
+                                <li>Private bathroom with shower</li>
+                            </ul>
+                            <div class="mt-3">
+                                <strong>Price: KES 8,500 per night</strong>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <a href="booking.html" class="btn btn-primary">Book This Room</a>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Deluxe Room Modal -->
+    <div class="modal fade" id="deluxeRoomModal" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Deluxe Room Details</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <img src="images/deluxe-room.jpg" alt="Deluxe Room" class="img-fluid rounded">
+                        </div>
+                        <div class="col-md-6">
+                            <h4>Room Features</h4>
+                            <ul>
+                                <li>45 square meters of elegant space</li>
+                                <li>1 King Bed</li>
+                                <li>Ocean view</li>
+                                <li>Private balcony</li>
+                                <li>Air conditioning</li>
+                                <li>Free WiFi</li>
+                                <li>Smart TV</li>
+                                <li>Coffee maker</li>
+                                <li>Private bathroom with bathtub</li>
+                                <li>24/7 room service</li>
+                            </ul>
+                            <div class="mt-3">
+                                <strong>Price: KES 12,500 per night</strong>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <a href="booking.html" class="btn btn-primary">Book This Room</a>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Suite Modal -->
+    <div class="modal fade" id="suiteModal" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Executive Suite Details</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <img src="images/suite.jpg" alt="Executive Suite" class="img-fluid rounded">
+                        </div>
+                        <div class="col-md-6">
+                            <h4>Suite Features</h4>
+                            <ul>
+                                <li>75 square meters of luxury space</li>
+                                <li>1 King Bed</li>
+                                <li>Panoramic view</li>
+                                <li>Private terrace</li>
+                                <li>Separate living room</li>
+                                <li>Mini kitchen</li>
+                                <li>Air conditioning</li>
+                                <li>Free WiFi</li>
+                                <li>Smart TV</li>
+                                <li>Coffee maker</li>
+                                <li>Private bathroom with jacuzzi</li>
+                                <li>24/7 room service</li>
+                            </ul>
+                            <div class="mt-3">
+                                <strong>Price: KES 18,500 per night</strong>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <a href="booking.html" class="btn btn-primary">Book This Suite</a>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

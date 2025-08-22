@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Special Deals & Offers - Le Mach Hotel</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <div class="logo">
+                    <div class="logo-graphic">
+                        <div class="sun-icon"></div>
+                    </div>
+                    <div class="logo-text">
+                        <h1>LE MACH</h1>
+                        <p>IN LOVE WITH THE SUN</p>
+                    </div>
+                </div>
+            </a>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="meetings-events.html">Meetings & Events</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="rooms.html">Rooms</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="deals.html">Deals</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+                            Culinary
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="menu.html">Menu</a></li>
+                            <li><a class="dropdown-item" href="bar-restaurant.html">Bar & Restaurant</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="btn btn-primary booking-btn" href="booking.html">Book Now</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header" style="background: linear-gradient(135deg, var(--primary-color) 0%, var(--accent-color) 100%); padding: 120px 0 80px; color: white; text-align: center;">
+        <div class="container">
+            <h1>Special Deals & Offers</h1>
+            <p>Exclusive packages and promotions for our valued guests</p>
+        </div>
+    </section>
+
+    <!-- Featured Offers -->
+    <section class="featured-offers py-5">
+        <div class="container">
+            <div class="section-header text-center mb-5">
+                <h2>Featured Offers</h2>
+                <p>Limited time deals that you won't want to miss</p>
+            </div>
+            
+            <div class="row">
+                <div class="col-lg-6 mb-4">
+                    <div class="featured-offer-card">
+                        <div class="offer-image">
+                            <img src="images/weekend-getaway.jpg" alt="Weekend Getaway" class="img-fluid">
+                            <div class="offer-badge">20% OFF</div>
+                        </div>
+                        <div class="offer-content">
+                            <h3>Weekend Getaway Package</h3>
+                            <p class="offer-description">Perfect for a quick escape! Enjoy 20% off on weekend stays with complimentary breakfast and late check-out.</p>
+                            <div class="offer-details">
+                                <div class="detail-item">
+                                    <i class="fas fa-calendar"></i>
+                                    <span>Valid: Friday - Sunday</span>
+                                </div>
+                                <div class="detail-item">
+                                    <i class="fas fa-utensils"></i>
+                                    <span>Complimentary Breakfast</span>
+                                </div>
+                                <div class="detail-item">
+                                    <i class="fas fa-clock"></i>
+                                    <span>Late Check-out (2 PM)</span>
+                                </div>
+                            </div>
+                            <div class="offer-price">
+                                <span class="original-price">KES 12,500</span>
+                                <span class="discounted-price">KES 10,000</span>
+                                <span class="per-night">per night</span>
+                            </div>
+                            <a href="booking.html" class="btn btn-primary btn-lg">Book This Offer</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-6 mb-4">
+                    <div class="featured-offer-card">
+                        <div class="offer-image">
+                            <img src="images/extended-stay.jpg" alt="Extended Stay" class="img-fluid">
+                            <div class="offer-badge">STAY 7, PAY 5</div>
+                        </div>
+                        <div class="offer-content">
+                            <h3>Extended Stay Package</h3>
+                            <p class="offer-description">Stay 7 nights and get 2 nights free! Perfect for longer vacations with all-inclusive amenities.</p>
+                            <div class="offer-details">
+                                <div class="detail-item">
+                                    <i class="fas fa-calendar"></i>
+                                    <span>Minimum 7 nights</span>
+                                </div>
+                                <div class="detail-item">
+                                    <i class="fas fa-utensils"></i>
+                                    <span>All-inclusive meals</span>
+                                </div>
+                                <div class="detail-item">
+                                    <i class="fas fa-swimming-pool"></i>
+                                    <span>Pool access included</span>
+                                </div>
+                            </div>
+                            <div class="offer-price">
+                                <span class="original-price">KES 87,500</span>
+                                <span class="discounted-price">KES 62,500</span>
+                                <span class="per-night">for 7 nights</span>
+                            </div>
+                            <a href="booking.html" class="btn btn-primary btn-lg">Book This Offer</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seasonal Packages -->
+    <section class="seasonal-packages py-5" style="background: var(--light-bg);">
+        <div class="container">
+            <div class="section-header text-center mb-5">
+                <h2>Seasonal Packages</h2>
+                <p>Special offers for different seasons and occasions</p>
+            </div>
+            
+            <div class="row">
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="package-card">
+                        <div class="package-image">
+                            <img src="images/honeymoon-package.jpg" alt="Honeymoon Package" class="img-fluid">
+                        </div>
+                        <div class="package-content">
+                            <h4>Honeymoon Package</h4>
+                            <p>Celebrate your love with our romantic honeymoon package including champagne, rose petals, and couples massage.</p>
+                            <ul class="package-features">
+                                <li><i class="fas fa-check"></i> Romantic room setup</li>
+                                <li><i class="fas fa-check"></i> Champagne on arrival</li>
+                                <li><i class="fas fa-check"></i> Couples massage</li>
+                                <li><i class="fas fa-check"></i> Private dinner</li>
+                            </ul>
+                            <div class="package-price">
+                                <span class="price">KES 25,000</span>
+                                <span class="duration">per night</span>
+                            </div>
+                            <a href="booking.html" class="btn btn-outline-primary">Book Package</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="package-card">
+                        <div class="package-image">
+                            <img src="images/family-package.jpg" alt="Family Package" class="img-fluid">
+                        </div>
+                        <div class="package-content">
+                            <h4>Family Package</h4>
+                            <p>Perfect for family vacations with activities for kids, family meals, and spacious accommodations.</p>
+                            <ul class="package-features">
+                                <li><i class="fas fa-check"></i> Kids stay free</li>
+                                <li><i class="fas fa-check"></i> Family activities</li>
+                                <li><i class="fas fa-check"></i> Kids menu</li>
+                                <li><i class="fas fa-check"></i> Babysitting service</li>
+                            </ul>
+                            <div class="package-price">
+                                <span class="price">KES 18,000</span>
+                                <span class="duration">per night</span>
+                            </div>
+                            <a href="booking.html" class="btn btn-outline-primary">Book Package</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="package-card">
+                        <div class="package-image">
+                            <img src="images/business-package.jpg" alt="Business Package" class="img-fluid">
+                        </div>
+                        <div class="package-content">
+                            <h4>Business Package</h4>
+                            <p>Ideal for business travelers with meeting facilities, high-speed internet, and convenient check-in/out.</p>
+                            <ul class="package-features">
+                                <li><i class="fas fa-check"></i> Meeting room access</li>
+                                <li><i class="fas fa-check"></i> High-speed WiFi</li>
+                                <li><i class="fas fa-check"></i> Business center</li>
+                                <li><i class="fas fa-check"></i> Express check-in/out</li>
+                            </ul>
+                            <div class="package-price">
+                                <span class="price">KES 15,000</span>
+                                <span class="duration">per night</span>
+                            </div>
+                            <a href="booking.html" class="btn btn-outline-primary">Book Package</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Last Minute Deals -->
+    <section class="last-minute-deals py-5">
+        <div class="container">
+            <div class="section-header text-center mb-5">
+                <h2>Last Minute Deals</h2>
+                <p>Spontaneous getaways at unbeatable prices</p>
+            </div>
+            
+            <div class="row">
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="last-minute-card">
+                        <div class="deal-header">
+                            <span class="deal-type">Flash Sale</span>
+                            <span class="deal-discount">30% OFF</span>
+                        </div>
+                        <div class="deal-content">
+                            <h5>Standard Room</h5>
+                            <p>Available for tonight and tomorrow</p>
+                            <div class="deal-price">
+                                <span class="original">KES 8,500</span>
+                                <span class="discounted">KES 5,950</span>
+                            </div>
+                            <a href="booking.html" class="btn btn-sm btn-primary">Book Now</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="last-minute-card">
+                        <div class="deal-header">
+                            <span class="deal-type">Weekday Special</span>
+                            <span class="deal-discount">25% OFF</span>
+                        </div>
+                        <div class="deal-content">
+                            <h5>Deluxe Room</h5>
+                            <p>Monday to Thursday stays</p>
+                            <div class="deal-price">
+                                <span class="original">KES 12,500</span>
+                                <span class="discounted">KES 9,375</span>
+                            </div>
+                            <a href="booking.html" class="btn btn-sm btn-primary">Book Now</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="last-minute-card">
+                        <div class="deal-header">
+                            <span class="deal-type">Group Rate</span>
+                            <span class="deal-discount">20% OFF</span>
+                        </div>
+                        <div class="deal-content">
+                            <h5>3+ Rooms</h5>
+                            <p>Book 3 or more rooms together</p>
+                            <div class="deal-price">
+                                <span class="original">KES 8,500</span>
+                                <span class="discounted">KES 6,800</span>
+                            </div>
+                            <a href="booking.html" class="btn btn-sm btn-primary">Book Now</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="last-minute-card">
+                        <div class="deal-header">
+                            <span class="deal-type">Senior Rate</span>
+                            <span class="deal-discount">15% OFF</span>
+                        </div>
+                        <div class="deal-content">
+                            <h5>60+ Years</h5>
+                            <p>Special rates for senior guests</p>
+                            <div class="deal-price">
+                                <span class="original">KES 8,500</span>
+                                <span class="discounted">KES 7,225</span>
+                            </div>
+                            <a href="booking.html" class="btn btn-sm btn-primary">Book Now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Loyalty Program -->
+    <section class="loyalty-program py-5" style="background: linear-gradient(135deg, var(--secondary-color) 0%, var(--primary-color) 100%); color: white;">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <div class="loyalty-content">
+                        <h2>Join Our Loyalty Program</h2>
+                        <p class="lead">Earn points with every stay and enjoy exclusive member benefits</p>
+                        <ul class="loyalty-benefits">
+                            <li><i class="fas fa-star"></i> Earn 10 points per KES 1,000 spent</li>
+                            <li><i class="fas fa-gift"></i> Free room upgrades</li>
+                            <li><i class="fas fa-clock"></i> Early check-in and late check-out</li>
+                            <li><i class="fas fa-utensils"></i> Complimentary breakfast</li>
+                            <li><i class="fas fa-percentage"></i> Exclusive member-only rates</li>
+                        </ul>
+                        <a href="#" class="btn btn-light btn-lg">Join Now</a>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="loyalty-image text-center">
+                        <i class="fas fa-crown" style="font-size: 8rem; opacity: 0.3;"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Signup -->
+    <section class="newsletter-section py-5" style="background: var(--light-bg);">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8 text-center">
+                    <h3>Stay Updated with Our Latest Offers</h3>
+                    <p>Subscribe to our newsletter and be the first to know about exclusive deals and promotions</p>
+                    <form class="newsletter-form">
+                        <div class="row justify-content-center">
+                            <div class="col-md-8">
+                                <div class="input-group">
+                                    <input type="email" class="form-control" placeholder="Enter your email address" required>
+                                    <button class="btn btn-primary" type="submit">Subscribe</button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="footer-logo">
+                        <div class="logo">
+                            <div class="logo-graphic">
+                                <div class="sun-icon"></div>
+                            </div>
+                            <div class="logo-text">
+                                <h3>LE MACH</h3>
+                                <p>IN LOVE WITH THE SUN</p>
+                            </div>
+                        </div>
+                    </div>
+                    <p>Experience luxury and comfort in the heart of Kilifi County. Your perfect getaway destination.</p>
+                </div>
+                <div class="col-lg-2 col-md-6 mb-4">
+                    <h5>Quick Links</h5>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="rooms.html">Rooms</a></li>
+                        <li><a href="meetings-events.html">Events</a></li>
+                        <li><a href="about.html">About</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-md-6 mb-4">
+                    <h5>Services</h5>
+                    <ul class="footer-links">
+                        <li><a href="bar-restaurant.html">Restaurant</a></li>
+                        <li><a href="menu.html">Menu</a></li>
+                        <li><a href="deals.html">Deals</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <h5>Contact Info</h5>
+                    <div class="contact-info">
+                        <p><i class="fas fa-map-marker-alt"></i> Kilifi County, Off B69</p>
+                        <p><i class="fas fa-phone"></i> +254 XXX XXX XXX</p>
+                        <p><i class="fas fa-envelope"></i> info@lemachhotel.com</p>
+                    </div>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col-md-6">
+                    <p>&copy; 2024 Le Mach Hotel & Accommodations. All rights reserved.</p>
+                </div>
+                <div class="col-md-6 text-end">
+                    <p>Designed with <i class="fas fa-heart"></i> for our guests</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

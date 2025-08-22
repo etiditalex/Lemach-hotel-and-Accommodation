@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Your Stay - Le Mach Hotel</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <div class="logo">
+                    <div class="logo-graphic">
+                        <div class="sun-icon"></div>
+                    </div>
+                    <div class="logo-text">
+                        <h1>LE MACH</h1>
+                        <p>IN LOVE WITH THE SUN</p>
+                    </div>
+                </div>
+            </a>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="meetings-events.html">Meetings & Events</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="rooms.html">Rooms</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="deals.html">Deals</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+                            Culinary
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="menu.html">Menu</a></li>
+                            <li><a class="dropdown-item" href="bar-restaurant.html">Bar & Restaurant</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="btn btn-primary booking-btn active" href="booking.html">Book Now</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header" style="background: linear-gradient(135deg, var(--primary-color) 0%, var(--accent-color) 100%); padding: 120px 0 80px; color: white; text-align: center;">
+        <div class="container">
+            <h1>Book Your Stay</h1>
+            <p>Reserve your perfect room and start planning your memorable experience</p>
+        </div>
+    </section>
+
+    <!-- Booking Form Section -->
+    <section class="booking-section py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8">
+                    <div class="booking-form-container">
+                        <h2>Reservation Details</h2>
+                        <form id="booking-form" class="booking-form">
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <label for="firstName" class="form-label">First Name *</label>
+                                    <input type="text" class="form-control" id="firstName" required>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label for="lastName" class="form-label">Last Name *</label>
+                                    <input type="text" class="form-control" id="lastName" required>
+                                </div>
+                            </div>
+                            
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <label for="email" class="form-label">Email Address *</label>
+                                    <input type="email" class="form-control" id="email" required>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label for="phone" class="form-label">Phone Number *</label>
+                                    <input type="tel" class="form-control" id="phone" required>
+                                </div>
+                            </div>
+                            
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <label for="checkIn" class="form-label">Check-in Date *</label>
+                                    <input type="date" class="form-control" id="checkIn" required>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label for="checkOut" class="form-label">Check-out Date *</label>
+                                    <input type="date" class="form-control" id="checkOut" required>
+                                </div>
+                            </div>
+                            
+                            <div class="row">
+                                <div class="col-md-4 mb-3">
+                                    <label for="adults" class="form-label">Adults *</label>
+                                    <select class="form-select" id="adults" required>
+                                        <option value="">Select</option>
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-4 mb-3">
+                                    <label for="children" class="form-label">Children</label>
+                                    <select class="form-select" id="children">
+                                        <option value="0">0</option>
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-4 mb-3">
+                                    <label for="rooms" class="form-label">Number of Rooms *</label>
+                                    <select class="form-select" id="rooms" required>
+                                        <option value="">Select</option>
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                    </select>
+                                </div>
+                            </div>
+                            
+                            <div class="mb-3">
+                                <label for="roomType" class="form-label">Room Type *</label>
+                                <select class="form-select" id="roomType" required>
+                                    <option value="">Select Room Type</option>
+                                    <option value="standard">Standard Room - KES 8,500/night</option>
+                                    <option value="deluxe">Deluxe Room - KES 12,500/night</option>
+                                    <option value="suite">Executive Suite - KES 18,500/night</option>
+                                </select>
+                            </div>
+                            
+                            <div class="mb-3">
+                                <label for="specialRequests" class="form-label">Special Requests</label>
+                                <textarea class="form-control" id="specialRequests" rows="4" placeholder="Any special requests or preferences?"></textarea>
+                            </div>
+                            
+                            <div class="form-check mb-3">
+                                <input class="form-check-input" type="checkbox" id="newsletter">
+                                <label class="form-check-label" for="newsletter">
+                                    Subscribe to our newsletter for exclusive offers
+                                </label>
+                            </div>
+                            
+                            <button type="submit" class="btn btn-primary btn-lg">Complete Booking</button>
+                        </form>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4">
+                    <div class="booking-sidebar">
+                        <div class="booking-summary">
+                            <h3>Booking Summary</h3>
+                            <div class="summary-item">
+                                <span>Check-in:</span>
+                                <span id="summaryCheckIn">-</span>
+                            </div>
+                            <div class="summary-item">
+                                <span>Check-out:</span>
+                                <span id="summaryCheckOut">-</span>
+                            </div>
+                            <div class="summary-item">
+                                <span>Nights:</span>
+                                <span id="summaryNights">-</span>
+                            </div>
+                            <div class="summary-item">
+                                <span>Guests:</span>
+                                <span id="summaryGuests">-</span>
+                            </div>
+                            <div class="summary-item">
+                                <span>Room Type:</span>
+                                <span id="summaryRoomType">-</span>
+                            </div>
+                            <hr>
+                            <div class="summary-item total">
+                                <span>Total:</span>
+                                <span id="summaryTotal">KES 0</span>
+                            </div>
+                        </div>
+                        
+                        <div class="booking-info">
+                            <h4>Important Information</h4>
+                            <ul>
+                                <li>Check-in time: 2:00 PM</li>
+                                <li>Check-out time: 11:00 AM</li>
+                                <li>Free cancellation up to 24 hours before arrival</li>
+                                <li>Payment required at check-in</li>
+                                <li>Valid ID required for all guests</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="contact-info-card">
+                            <h4>Need Help?</h4>
+                            <p>Contact our reservations team:</p>
+                            <div class="contact-item">
+                                <i class="fas fa-phone"></i>
+                                <span>+254 XXX XXX XXX</span>
+                            </div>
+                            <div class="contact-item">
+                                <i class="fas fa-envelope"></i>
+                                <span>reservations@lemachhotel.com</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Available Rooms Preview -->
+    <section class="rooms-preview py-5" style="background: var(--light-bg);">
+        <div class="container">
+            <div class="section-header text-center mb-5">
+                <h2>Available Room Types</h2>
+                <p>Choose from our selection of comfortable and luxurious accommodations</p>
+            </div>
+            
+            <div class="row">
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="room-preview-card">
+                        <img src="images/standard-room.jpg" alt="Standard Room" class="img-fluid">
+                        <div class="room-preview-content">
+                            <h4>Standard Room</h4>
+                            <p>Perfect for solo travelers or couples</p>
+                            <div class="room-preview-features">
+                                <span><i class="fas fa-bed"></i> 1 King or 2 Twin Beds</span>
+                                <span><i class="fas fa-users"></i> 2 Guests</span>
+                                <span><i class="fas fa-ruler-combined"></i> 35 sqm</span>
+                            </div>
+                            <div class="room-preview-price">
+                                <span class="price">KES 8,500</span>
+                                <span class="per-night">per night</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="room-preview-card">
+                        <img src="images/deluxe-room.jpg" alt="Deluxe Room" class="img-fluid">
+                        <div class="room-preview-content">
+                            <h4>Deluxe Room</h4>
+                            <p>Spacious rooms with premium amenities</p>
+                            <div class="room-preview-features">
+                                <span><i class="fas fa-bed"></i> 1 King Bed</span>
+                                <span><i class="fas fa-users"></i> 2 Guests</span>
+                                <span><i class="fas fa-ruler-combined"></i> 45 sqm</span>
+                            </div>
+                            <div class="room-preview-price">
+                                <span class="price">KES 12,500</span>
+                                <span class="per-night">per night</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="room-preview-card">
+                        <img src="images/suite.jpg" alt="Executive Suite" class="img-fluid">
+                        <div class="room-preview-content">
+                            <h4>Executive Suite</h4>
+                            <p>Ultimate luxury with separate living areas</p>
+                            <div class="room-preview-features">
+                                <span><i class="fas fa-bed"></i> 1 King Bed</span>
+                                <span><i class="fas fa-users"></i> 4 Guests</span>
+                                <span><i class="fas fa-ruler-combined"></i> 75 sqm</span>
+                            </div>
+                            <div class="room-preview-price">
+                                <span class="price">KES 18,500</span>
+                                <span class="per-night">per night</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="footer-logo">
+                        <div class="logo">
+                            <div class="logo-graphic">
+                                <div class="sun-icon"></div>
+                            </div>
+                            <div class="logo-text">
+                                <h3>LE MACH</h3>
+                                <p>IN LOVE WITH THE SUN</p>
+                            </div>
+                        </div>
+                    </div>
+                    <p>Experience luxury and comfort in the heart of Kilifi County. Your perfect getaway destination.</p>
+                </div>
+                <div class="col-lg-2 col-md-6 mb-4">
+                    <h5>Quick Links</h5>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="rooms.html">Rooms</a></li>
+                        <li><a href="meetings-events.html">Events</a></li>
+                        <li><a href="about.html">About</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-md-6 mb-4">
+                    <h5>Services</h5>
+                    <ul class="footer-links">
+                        <li><a href="bar-restaurant.html">Restaurant</a></li>
+                        <li><a href="menu.html">Menu</a></li>
+                        <li><a href="deals.html">Deals</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <h5>Contact Info</h5>
+                    <div class="contact-info">
+                        <p><i class="fas fa-map-marker-alt"></i> Kilifi County, Off B69</p>
+                        <p><i class="fas fa-phone"></i> +254 XXX XXX XXX</p>
+                        <p><i class="fas fa-envelope"></i> info@lemachhotel.com</p>
+                    </div>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col-md-6">
+                    <p>&copy; 2024 Le Mach Hotel & Accommodations. All rights reserved.</p>
+                </div>
+                <div class="col-md-6 text-end">
+                    <p>Designed with <i class="fas fa-heart"></i> for our guests</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/booking.js"></script>
+</body>
+</html>
