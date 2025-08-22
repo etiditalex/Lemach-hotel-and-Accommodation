@@ -1,11 +1,11 @@
 /* ===== GLOBAL STYLES ===== */
 :root {
-    --primary-color: #D2691E; /* Terracotta/Burnt Orange */
-    --secondary-color: #2F4F4F; /* Dark Teal */
-    --accent-color: #FF8C42; /* Lighter Orange */
-    --primary-light: #E67E22; /* Lighter Terracotta */
-    --secondary-light: #34495E; /* Lighter Dark Teal */
-    --accent-light: #FFA500; /* Golden Orange */
+    --primary-color: #C79B7E; /* Light Brown/Terracotta from logo */
+    --secondary-color: #3F5252; /* Dark Muted Teal from logo */
+    --accent-color: #8C8C8C; /* Greyish Brown from logo */
+    --primary-light: #D4A98A; /* Lighter Terracotta */
+    --secondary-light: #4A5F5F; /* Lighter Dark Teal */
+    --accent-light: #A0A0A0; /* Lighter Greyish Brown */
     --text-dark: #2C3E50;
     --text-light: #7F8C8D;
     --text-lighter: #BDC3C7;
@@ -16,10 +16,10 @@
     --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     --shadow-hover: 0 8px 15px rgba(0, 0, 0, 0.2);
     --shadow-strong: 0 10px 25px rgba(0, 0, 0, 0.15);
-    --gradient-primary: linear-gradient(135deg, #D2691E 0%, #FF8C42 100%);
-    --gradient-secondary: linear-gradient(135deg, #2F4F4F 0%, #34495E 100%);
-    --gradient-accent: linear-gradient(135deg, #FF8C42 0%, #FFA500 100%);
-    --gradient-hero: linear-gradient(135deg, rgba(210, 105, 30, 0.9) 0%, rgba(255, 140, 66, 0.8) 100%);
+    --gradient-primary: linear-gradient(135deg, #C79B7E 0%, #D4A98A 100%);
+    --gradient-secondary: linear-gradient(135deg, #3F5252 0%, #4A5F5F 100%);
+    --gradient-accent: linear-gradient(135deg, #8C8C8C 0%, #A0A0A0 100%);
+    --gradient-hero: linear-gradient(135deg, rgba(199, 155, 126, 0.9) 0%, rgba(212, 169, 138, 0.8) 100%);
 }
 
 * {
@@ -69,7 +69,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .logo-graphic:hover {
     transform: rotate(5deg) !important;
-    box-shadow: 0 15px 35px rgba(210, 105, 30, 0.3) !important;
+    box-shadow: 0 15px 35px rgba(199, 155, 126, 0.3) !important;
 }
 
 .logo-image {
@@ -83,47 +83,9 @@ h1, h2, h3, h4, h5, h6 {
     transform: scale(1.1) !important;
 }
 
-.sun-icon {
-    width: 35px !important;
-    height: 35px !important;
-    background: var(--secondary-color) !important;
-    border-radius: 50% !important;
-    position: relative !important;
-    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.2) !important;
-}
-
-.sun-icon::before {
-    content: '' !important;
-    position: absolute !important;
-    top: -10px !important;
-    left: 50% !important;
-    transform: translateX(-50%) !important;
-    width: 5px !important;
-    height: 10px !important;
-    background: var(--secondary-color) !important;
-    border-radius: 2.5px !important;
-    box-shadow: 0 0 5px rgba(47, 79, 79, 0.5) !important;
-}
-
-.sun-icon::after {
-    content: '' !important;
-    position: absolute !important;
-    bottom: -10px !important;
-    left: 50% !important;
-    transform: translateX(-50%) !important;
-    width: 5px !important;
-    height: 10px !important;
-    background: var(--secondary-color) !important;
-    border-radius: 2.5px !important;
-    box-shadow: 0 0 5px rgba(47, 79, 79, 0.5) !important;
-}
-
 .logo-text h1 {
     font-size: 2rem !important;
-    background: var(--gradient-primary) !important;
-    -webkit-background-clip: text !important;
-    -webkit-text-fill-color: transparent !important;
-    background-clip: text !important;
+    color: var(--primary-color) !important;
     margin: 0 !important;
     font-weight: 900 !important;
     letter-spacing: 3px !important;
@@ -132,7 +94,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .logo-text p {
     font-size: 0.75rem !important;
-    color: var(--text-light) !important;
+    color: var(--accent-color) !important;
     margin: 0 !important;
     font-weight: 400 !important;
     letter-spacing: 2px !important;
@@ -144,10 +106,10 @@ h1, h2, h3, h4, h5, h6 {
     background: rgba(255, 255, 255, 0.98) !important;
     backdrop-filter: blur(20px) !important;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1) !important;
-    padding: 20px 0 !important;
+    padding: 15px 0 !important;
     transition: all 0.4s ease !important;
-    border-bottom: 3px solid transparent !important;
-    background-image: linear-gradient(to right, rgba(210, 105, 30, 0.05), rgba(255, 140, 66, 0.05)) !important;
+    border-bottom: 2px solid var(--primary-color) !important;
+    background-image: linear-gradient(to right, rgba(199, 155, 126, 0.05), rgba(212, 169, 138, 0.05)) !important;
 }
 
 .navbar.scrolled {
@@ -173,7 +135,7 @@ h1, h2, h3, h4, h5, h6 {
 .navbar-nav .nav-link:hover,
 .navbar-nav .nav-link.active {
     color: var(--primary-color) !important;
-    background: rgba(210, 105, 30, 0.1) !important;
+    background: rgba(199, 155, 126, 0.1) !important;
     transform: translateY(-2px) !important;
 }
 
@@ -220,17 +182,19 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .booking-btn {
-    background: var(--gradient-primary) !important;
-    border: 2px solid var(--primary-color) !important;
+    background: var(--secondary-color) !important;
+    border: 2px solid var(--secondary-color) !important;
     color: var(--white) !important;
     padding: 12px 30px !important;
-    border-radius: 30px !important;
+    border-radius: 5px !important;
     font-weight: 700 !important;
     transition: all 0.3s ease !important;
     margin-left: 20px !important;
     box-shadow: var(--shadow) !important;
     position: relative !important;
     overflow: hidden !important;
+    text-transform: uppercase !important;
+    letter-spacing: 1px !important;
 }
 
 .booking-btn::before {
@@ -253,13 +217,13 @@ h1, h2, h3, h4, h5, h6 {
     border-color: var(--accent-color) !important;
     color: var(--white) !important;
     transform: translateY(-3px) !important;
-    box-shadow: 0 10px 25px rgba(210, 105, 30, 0.4) !important;
+    box-shadow: 0 10px 25px rgba(199, 155, 126, 0.4) !important;
 }
 
 /* ===== ENHANCED HERO SECTION ===== */
 .hero-section {
     height: 100vh !important;
-    background: var(--gradient-hero) !important;
+    background: linear-gradient(135deg, rgba(199, 155, 126, 0.8) 0%, rgba(63, 82, 82, 0.9) 100%) !important;
     position: relative !important;
     overflow: hidden !important;
 }
@@ -371,7 +335,7 @@ h1, h2, h3, h4, h5, h6 {
     background: var(--secondary-color) !important;
     color: var(--white) !important;
     transform: translateY(-5px) !important;
-    box-shadow: 0 15px 35px rgba(47, 79, 79, 0.4) !important;
+    box-shadow: 0 15px 35px rgba(63, 82, 82, 0.4) !important;
 }
 
 .btn-outline-light {
@@ -415,7 +379,7 @@ h1, h2, h3, h4, h5, h6 {
     height: 100% !important;
     position: relative !important;
     overflow: hidden !important;
-    border: 1px solid rgba(210, 105, 30, 0.1) !important;
+    border: 1px solid rgba(199, 155, 126, 0.1) !important;
 }
 
 .feature-card::before {
@@ -455,7 +419,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .feature-card:hover .feature-icon {
     transform: scale(1.1) rotate(5deg) !important;
-    box-shadow: 0 15px 35px rgba(210, 105, 30, 0.4) !important;
+    box-shadow: 0 15px 35px rgba(199, 155, 126, 0.4) !important;
 }
 
 .feature-icon i {
@@ -565,7 +529,7 @@ h1, h2, h3, h4, h5, h6 {
     left: 0 !important;
     right: 0 !important;
     bottom: 0 !important;
-    background: linear-gradient(135deg, rgba(210, 105, 30, 0.02) 0%, rgba(255, 140, 66, 0.02) 100%) !important;
+    background: linear-gradient(135deg, rgba(199, 155, 126, 0.02) 0%, rgba(212, 169, 138, 0.02) 100%) !important;
     z-index: 1 !important;
 }
 
@@ -604,7 +568,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .about-content .btn:hover {
     transform: translateY(-3px) !important;
-    box-shadow: 0 15px 35px rgba(210, 105, 30, 0.4) !important;
+    box-shadow: 0 15px 35px rgba(199, 155, 126, 0.4) !important;
 }
 
 .about-image {
@@ -766,7 +730,7 @@ h1, h2, h3, h4, h5, h6 {
     left: 0 !important;
     right: 0 !important;
     bottom: 0 !important;
-    background: linear-gradient(135deg, rgba(47, 79, 79, 0.02) 0%, rgba(52, 73, 94, 0.02) 100%) !important;
+    background: linear-gradient(135deg, rgba(63, 82, 82, 0.02) 0%, rgba(74, 95, 95, 0.02) 100%) !important;
     z-index: 1 !important;
 }
 
@@ -806,7 +770,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .offer-card:hover {
     transform: translateY(-10px) !important;
-    box-shadow: 0 20px 40px rgba(210, 105, 30, 0.4) !important;
+    box-shadow: 0 20px 40px rgba(199, 155, 126, 0.4) !important;
 }
 
 .offer-content {
@@ -944,17 +908,14 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .footer-logo .logo-text h3 {
-    background: var(--gradient-primary) !important;
-    -webkit-background-clip: text !important;
-    -webkit-text-fill-color: transparent !important;
-    background-clip: text !important;
+    color: var(--primary-color) !important;
     font-size: 1.8rem !important;
     font-weight: 900 !important;
     letter-spacing: 2px !important;
 }
 
 .footer-logo .logo-text p {
-    color: var(--text-lighter) !important;
+    color: var(--accent-color) !important;
     font-size: 0.85rem !important;
     font-weight: 400 !important;
     letter-spacing: 1.5px !important;
@@ -969,10 +930,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .footer h5 {
-    background: var(--gradient-primary) !important;
-    -webkit-background-clip: text !important;
-    -webkit-text-fill-color: transparent !important;
-    background-clip: text !important;
+    color: var(--primary-color) !important;
     margin-bottom: 25px !important;
     font-weight: 700 !important;
     font-size: 1.3rem !important;
@@ -1053,7 +1011,7 @@ h1, h2, h3, h4, h5, h6 {
 .social-links a:hover {
     background: var(--gradient-accent) !important;
     transform: translateY(-5px) rotate(5deg) !important;
-    box-shadow: 0 10px 25px rgba(210, 105, 30, 0.4) !important;
+    box-shadow: 0 10px 25px rgba(199, 155, 126, 0.4) !important;
 }
 
 .footer hr {
@@ -1200,5 +1158,78 @@ h1, h2, h3, h4, h5, h6 {
 
 ::-webkit-scrollbar-thumb:hover {
     background: var(--gradient-accent) !important;
+}
+
+/* ===== PROFESSIONAL BOOKING SECTION ===== */
+.booking-section {
+    background: var(--primary-color) !important;
+    color: var(--white) !important;
+    padding: 60px 0 !important;
+}
+
+.booking-form-container {
+    background: rgba(255, 255, 255, 0.1) !important;
+    border-radius: 15px !important;
+    padding: 40px !important;
+    backdrop-filter: blur(10px) !important;
+}
+
+.booking-form h3 {
+    color: var(--white) !important;
+    font-size: 2rem !important;
+    font-weight: 700 !important;
+    margin-bottom: 30px !important;
+}
+
+.booking-form label {
+    color: var(--white) !important;
+    font-weight: 600 !important;
+    font-size: 0.9rem !important;
+    text-transform: uppercase !important;
+    letter-spacing: 1px !important;
+    margin-bottom: 8px !important;
+}
+
+.booking-form .form-control {
+    background: rgba(255, 255, 255, 0.9) !important;
+    border: 2px solid rgba(255, 255, 255, 0.3) !important;
+    border-radius: 8px !important;
+    color: var(--secondary-color) !important;
+    font-weight: 500 !important;
+    transition: all 0.3s ease !important;
+}
+
+.booking-form .form-control:focus {
+    background: var(--white) !important;
+    border-color: var(--secondary-color) !important;
+    box-shadow: 0 0 0 0.2rem rgba(63, 82, 82, 0.25) !important;
+}
+
+.booking-form .input-group-text {
+    background: var(--secondary-color) !important;
+    border: 2px solid var(--secondary-color) !important;
+    color: var(--white) !important;
+    border-radius: 0 8px 8px 0 !important;
+}
+
+.btn-booking {
+    background: var(--white) !important;
+    color: var(--primary-color) !important;
+    border: 2px solid var(--white) !important;
+    padding: 15px 40px !important;
+    font-weight: 700 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 2px !important;
+    border-radius: 8px !important;
+    transition: all 0.3s ease !important;
+    font-size: 1.1rem !important;
+}
+
+.btn-booking:hover {
+    background: transparent !important;
+    color: var(--white) !important;
+    border-color: var(--white) !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 10px 25px rgba(255, 255, 255, 0.2) !important;
 }
 
